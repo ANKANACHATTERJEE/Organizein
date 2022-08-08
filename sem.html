@@ -235,7 +235,7 @@
             </div>
          </div>
          <div class="theme-content">
-		            <aside class="console-sidemenu active" id="sidemenu">
+		            <aside class="console-sidemenu active collapse" id="sidemenu">
 		               <nav>
 		                  <ul class="console-menu">
                            <li style="background-color: #26bcf2;"class="menu-item">
@@ -337,17 +337,20 @@
       </div>
       <script>
          let i=1
+         let sidemenu=document.getElementById('sidemenu');
          let sm=document.getElementById('sm');
          sm.addEventListener("click",()=>{
             if(i%2==1){
+               //sidemenu.style.display=none;
                sm.innerHTML=`
-            <a href="#sidemenu" data-toggle="collapse"><img src="image/l2/long-arrow-left.png" alt="" style="border-radius: 50%; border: 1px solid black; padding:5px; background-color: white; transform: rotate(180deg);" id="arrow"></a>
+            <a href="#sidemenu" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidemenu"><img src="image/l2/long-arrow-right.png" alt="" style="border-radius: 50%; border: 1px solid black; padding:5px; background-color: white; " id="arrow"></a>
             `;
             i++;
             }
             else{
+               //sidemenu.style.display=none;
                sm.innerHTML=`
-            <a href="#sidemenu" data-toggle="collapse"><img src="image/l2/long-arrow-left.png" alt="" style="border-radius: 50%; border: 1px solid black; padding:5px; background-color: white; " id="arrow"></a>
+            <a href="#sidemenu" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidemenu"><img src="image/l2/long-arrow-left.png" alt="" style="border-radius: 50%; border: 1px solid black; padding:5px; background-color: white; " id="arrow"></a>
             `;
             i++;
             }
